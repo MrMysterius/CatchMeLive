@@ -2,8 +2,10 @@
 > Minimal Space Usage Live Checker and Discord Notifier for Twitch written in GO
 
 Checks the live status of a Twitch Channel and if live sends a Discord Message through a Webhook which will get also get updated periodically.
+
 My main goal for this was to make it very minimal so it has only what is necessary and I wanted to learn go a bit more.
-Now the image go produces is about +-8mb which is pretty ~~average~~ small if have to say so myself
+
+Now the image Docker produces is about +-8mb which is pretty ~~average~~ small if have to say so myself
 
 ## Prerequisites
 
