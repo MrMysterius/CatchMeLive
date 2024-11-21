@@ -7,4 +7,4 @@ services:
       TWITCH_CLIENT_SECRET: ""
       TWITCH_CHANNEL_NAME: ""
       DISCORD_WEBHOOK_URL: ""
-      DISCORD_LIVE_MESSAGE: ""
+      DISCORD_LIVE_MESSAGE: "@everyone {CHANNEL_NAME} is now live!"
