@@ -84,19 +84,26 @@ func main() {
 			continue
 		} else {
 			if cooldown == 0 {
+				message_id = sendWebhookMessage(user_copy, *stream)
 				if message_id == nil {
-					message_id = sendWebhookMessage(user_copy, *stream)
-					if message_id == nil {
-						cooldown = 0
-						time.Sleep(time.Second * 15)
-						continue
-					}
-				} else {
-					if !updateWebhookMessage(*message_id, user_copy, *stream) {
-						cooldown = 0
-						time.Sleep(time.Second * 15)
-						continue
-					}
+					cooldown = 0
+					time.Sleep(time.Second * 15)
+					continue
+				}
+			}
+
+			if message_id == nil {
+				message_id = sendWebhookMessage(user_copy, *stream)
+				if message_id == nil {
+					cooldown = 0
+					time.Sleep(time.Second * 15)
+					continue
+				}
+			} else {
+				if !updateWebhookMessage(*message_id, user_copy, *stream) {
+					cooldown = 0
+					time.Sleep(time.Second * 15)
+					continue
 				}
 			}
 

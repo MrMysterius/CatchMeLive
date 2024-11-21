@@ -253,7 +253,7 @@ func updateWebhookMessage(message_id string, user User, stream Stream) (success 
 	message_embed.Embeds = append(message_embed.Embeds, *embed)
 
 	req_body, _ := json.Marshal(message_embed)
-	req, _ := http.NewRequest(http.MethodPost, getEnv("DISCORD_WEBHOOK_URL"), strings.NewReader(string(req_body)))
+	req, _ := http.NewRequest(http.MethodPatch, getEnv("DISCORD_WEBHOOK_URL")+"/messages/"+message_id, strings.NewReader(string(req_body)))
 	req.Header.Set("Content-Type", "application/json")
 
 	client := &http.Client{}
