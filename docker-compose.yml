@@ -1,0 +1,10 @@
+services:
+  catch-me-live:
+    image: catch-me-live
+    build: .
+    environment:
+      TWITCH_CLIENT_ID: ""
+      TWITCH_CLIENT_SECRET: ""
+      TWITCH_CHANNEL_NAME: ""
+      DISCORD_WEBHOOK_URL: ""
+      DISCORD_LIVE_MESSAGE: ""
