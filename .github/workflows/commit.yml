@@ -36,4 +36,4 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: |
-            ghcr.io/mrmysterius/CatchMeLive:${{ steps.extract_branch.outputs.branch }}
+            ghcr.io/mrmysterius/catchmelive:${{ steps.extract_branch.outputs.branch }}
