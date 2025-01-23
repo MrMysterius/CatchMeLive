@@ -47,6 +47,15 @@ func main() {
 
 			if stream == nil && status != nil && *status != 401 {
 				fmt.Println("Error Retrieving Stream Info / No Stream Info To Get")
+				
+				if cooldown > 0 {
+					cooldown--
+					time.Sleep(time.Second * 15)
+					continue
+				}
+	
+				cooldown = 0
+				message_id = nil
 				time.Sleep(time.Second * 15)
 				continue
 			}
