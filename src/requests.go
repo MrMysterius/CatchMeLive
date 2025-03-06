@@ -200,7 +200,7 @@ func sendWebhookMessage(user User, stream Stream) (message_id *string) {
 	embed.Fields = append(embed.Fields, EmbedField{Name: "Game", Value: stream.GameName, Inline: true})
 	embed.Fields = append(embed.Fields, EmbedField{Name: "Viewers", Value: fmt.Sprintf("%d", stream.ViewerCount), Inline: true})
 	embed.Fields = append(embed.Fields, EmbedField{Name: "Title", Value: stream.Title, Inline: false})
-	embed.Image.URL = strings.ReplaceAll(strings.ReplaceAll(stream.ThumbnailUrl, "{width}", "1920"), "{height}", "1080") + fmt.Sprintf("?t=%d", time.Now().Minute()/5)
+	embed.Image.URL = strings.ReplaceAll(strings.ReplaceAll(stream.ThumbnailUrl, "{width}", "1920"), "{height}", "1080") + fmt.Sprintf("?t=%d", time.Now().UnixMilli())
 	message_embed.Embeds = append(message_embed.Embeds, *embed)
 
 	req_body, _ := json.Marshal(message_embed)
